@@ -1,0 +1,48 @@
+<style>
+
+
+@-webkit-keyframes typing { 0% { width: 0;animation-timing-function: steps(29,end); }
+35% { width: 29ch;animation-timing-function: steps(29,end); }
+50% { width: 0;animation-timing-function: steps(29,end); }
+85% { width: 29ch;animation-timing-function: steps(29,end); }
+100% { width: 0ch;animation-timing-function: steps(29,end); }}
+
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+@keyframes slide{
+  
+  50%{
+    transform: translateY(0ch);
+  }
+  51%{
+    transform: translateY(-2.2ch);
+  }
+  100%{
+    transform: translateY(-2.2ch);
+  }
+}
+
+.text{
+  animation: slide 14s infinite;
+}
+
+.texts{
+	font: bold 300% Consolas, Monaco, monospace;
+	border-right: .1em solid black;
+	width: 20em;
+  height: 2ch;
+	margin-left: 1em;
+	white-space: nowrap;
+  overflow: hidden;
+	-webkit-animation: typing 14s infinite, blink-caret .5s step-end infinite;
+}
+
+
+</style>
+
+<div class="main-text">
+  <div class="texts">
+    <div class="text">Selamat Hari Raya Idul Fitri</div>
+    <div class="text">Mohon Maaf Lahir dan Batin</div>
+  </div>
+</div>
