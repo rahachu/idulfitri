@@ -3,9 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
-
 @-webkit-keyframes typing { 0% { width: 0;animation-timing-function: steps(29,end); }
 35% { width: 29ch;animation-timing-function: steps(29,end); }
 50% { width: 0;animation-timing-function: steps(29,end); }
@@ -50,4 +49,37 @@
     <div class="text">Selamat Hari Raya Idul Fitri</div>
     <div class="text">Mohon Maaf Lahir dan Batin</div>
   </div>
+  <div style="position: fixed; top: 90vh;">- M Rahadian A P W -</div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script>
+	function pop2(){
+  new mojs.Burst({
+  count: 15,
+  top: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
+  left: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
+  children: {
+    fill: {'black':'grey'},
+    duration: 300,
+  },
+}).play();
+}
+
+function pop1(){
+  new mojs.Burst({
+  count: 20,
+  top: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
+  left: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
+  children: {
+    fill: {'black':'grey'},
+  },
+}).play();
+}
+
+var popper1= setInterval(pop1,500)
+
+var popper2=setInterval(pop2,800)
+
+
+</script>
