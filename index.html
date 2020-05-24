@@ -54,9 +54,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
 <script>
-	function pop2(){
-  new mojs.Burst({
+function pop2(){
+  var s = new mojs.Burst({
   count: 15,
+    className: 'pop',
   top: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
   left: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
   children: {
@@ -64,22 +65,32 @@
     duration: 300,
   },
 }).play();
+  delete s;
 }
 
 function pop1(){
-  new mojs.Burst({
+  var s = new mojs.Burst({
   count: 20,
+    className: 'pop',
   top: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
   left: (Math.floor(Math.random() * 60 ) + 20).toString()+'%',
   children: {
     fill: {'black':'grey'},
   },
 }).play();
+  delete s;
 }
 
-var popper1= setInterval(pop1,500)
+function deletePop(){
+  document.querySelectorAll("pop").forEach(function(a){
+    a.remove();
+  });
+}
 
-var popper2=setInterval(pop2,800)
+var popper1= setInterval(pop1,500);
 
+var popper2=setInterval(pop2,800);
+
+var cleaner=setInterval(deletePop,1000);
 
 </script>
